@@ -1,0 +1,44 @@
+@mixin displayCSS {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin fontCSS {
+  font: 500 clamp(21px, 1.6vh, 25px) Roboto, sans-serif;
+  text-decoration: none;
+  color: #000;
+}
+
+.mainComponent {
+  @include displayCSS;
+}
+
+.title {
+  a {
+    @include fontCSS;
+  }
+  margin: 10px;
+}
+nav {
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+}
+
+.navList {
+  @include displayCSS;
+  list-style: none;
+  margin: 15px;
+  padding: 10px;
+
+  li a {
+    @include fontCSS;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 8px;
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+}
